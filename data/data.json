@@ -1,7 +1,9 @@
 {
     "data" : [
-    {"id":"001","topic":"Core","type":"Profile","name":"BePatient","status":"active","date_pc":"2019-08-05","maturity":"","legal":"","published":""}
-    
+    {"id":"001","topic":"Core","type":"Profile","name":"BePatient","status":"active","date_pc":"2019-08-05","maturity":"","legal":"","published":""},
+    {"id":"087","topic":"Medication","type":"Profile","name":"BeMedicationDispense","status":"active","date_pc":"1900-01-00","maturity":"","legal":"","published":""},
+    {"id":"088","topic":"Parameter","type":"Profile","name":"BeParameter","status":"active","date_pc":"1900-01-00","maturity":"","legal":"","published":""},
+    {"id":"089","topic":"Core","type":"ValueSet","name":"Laterality","status":"active","date_pc":"1900-01-00","maturity":"","legal":"","published":""}    
     ]
 }
     
