@@ -117,8 +117,10 @@ const nodesFilter = (node) => {
 };
 var json = $.getJSON("../data/datavis.json")
   .done(function(data){
-    var data = {
-      nodes: data.nodes,
+    var nodes = {
+      nodes: data.nodes
+    };
+    var edges = {
       edges: data.edges
     };
   });
