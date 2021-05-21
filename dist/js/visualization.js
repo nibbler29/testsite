@@ -150,8 +150,8 @@ const edgesFilter = (edge) => {
   return edgesFilterValues[edge.relation];
 };
 
-const nodesView = new vis.DataView(nodes, { filter: nodesFilter });
-const edgesView = new vis.DataView(edges, { filter: edgesFilter });
+const nodesView = new vis.DataView(_nodes, { filter: nodesFilter });
+const edgesView = new vis.DataView(_edges, { filter: edgesFilter });
 
 nodeFilterSelector.addEventListener("change", (e) => {
   // set new value to filter variable
