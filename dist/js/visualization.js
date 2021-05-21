@@ -125,33 +125,33 @@ const nodesFilter = (node) => {
     };
   });*/
 
-var _nodes = new vis.DataSet();
-var _edges = new vis.DataSet();
+var nodes = new vis.DataSet();
+var edges = new vis.DataSet();
 
 //var container = document.getElementById('mynetwork');
-var data = {
+/*var data = {
   nodes: _nodes,
   edges: _edges,
 };
-/*var options = {
+var options = {
   autoResize: true,
   clickToUse: false
 };
 var network = new vis.Network(container, data, options);
 */
 $.getJSON('../data/edges.json', function(edges) {
-  _edges.add(edges);
+  edges.add(edges);
 });
 $.getJSON('../data/nodes.json', function(nodes) {
- _nodes.add(nodes);
+ nodes.add(nodes);
 });  
 
 const edgesFilter = (edge) => {
   return edgesFilterValues[edge.relation];
 };
 
-const nodesView = new vis.DataView(_nodes, { filter: nodesFilter });
-const edgesView = new vis.DataView(_edges, { filter: edgesFilter });
+const nodesView = new vis.DataView(nodes, { filter: nodesFilter });
+const edgesView = new vis.DataView(edges, { filter: edgesFilter });
 
 nodeFilterSelector.addEventListener("change", (e) => {
   // set new value to filter variable
