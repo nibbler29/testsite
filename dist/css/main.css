@@ -12,7 +12,7 @@
   .header {
     padding: 20px;
     text-align: center;
-    background: #1abc9c;
+    background: #da6a14b9;
     color: white;
   }
   
@@ -85,14 +85,7 @@
     background-color: white;
     padding: 25px;
   }
-  
-  /* Fake image, just for this example */
-  .fakeimg {
-    background-color: #aaa;
-    width: 100%;
-    padding: 20px;
-  }
-  
+   
   /* Footer */
   .footer {
     padding: 20px;
@@ -142,7 +135,7 @@
 }
 
 .select-selected {
-  background-color: #1abc9c;
+  background-color: #da6a14b9;
 }
 
 /* Style the arrow inside the select element: */
@@ -175,7 +168,7 @@
 /* Style items (options): */
 .select-items {
   position: absolute;
-  background-color: #1abc9c;
+  background-color: #da6a14b9;
   top: 100%;
   left: 0;
   right: 0;
