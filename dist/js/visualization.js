@@ -23,7 +23,7 @@ function startNetwork(data) {
 /**
  * In this example we do not mutate nodes or edges source data.
  */
-var nodes = new vis.DataSet([
+/*var nodes = new vis.DataSet([
 
 { 'id': '001', 'size': 170, 'label': '*BeVaccination**\n(Profile)\nStatus: active\n', 'color': '#CFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
 { 'id': '002', 'size': 170, 'label': '*VaccinationConfirmationStatus**\n(CodeSystem)\nStatus: draft\n', 'color': '#CFFFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
@@ -71,7 +71,7 @@ var edges = new vis.DataSet([
 {  from: '010',to: '019', relation:'binding_req', label: 'Bound (Req)',arrows: {'to':{ enabled: true,'type':'arrow'} },color: { color: '#000000' }},
 {  from: '019',to: '002', relation:'values_from', label: 'Values From',arrows: {'to':{ enabled: true,'type':'crow'} },color: { color: '#404000' }},
 
-]);
+]);*/
 
 
 /**
@@ -115,6 +115,13 @@ const nodesFilter = (node) => {
       return true;
   }
 };
+var json = $.getJSON("data/datavis.json")
+  .done(function(data){
+    var data = {
+      nodes: data.nodes,
+      edges: data.edges
+    };
+  });
 
 const edgesFilter = (edge) => {
   return edgesFilterValues[edge.relation];
