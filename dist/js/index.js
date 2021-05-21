@@ -1,6 +1,6 @@
 $(document).ready( function () {
   
-    var table = $('#example').DataTable({
+    /*var table = $('#example').DataTable({
                 "ajax": "data/data.json",
                 "columns": [
                     { "data": "id" },
@@ -58,5 +58,5 @@ $(document).ready( function () {
                 $('.select2').val(null).trigger('change');
               } );
           }
-    });
+    });*/
   } );
