@@ -20,59 +20,6 @@ function startNetwork(data) {
   new vis.Network(container, data, options);
 //  network.stabilize();
 }
-/**
- * In this example we do not mutate nodes or edges source data.
- */
-/*var nodes = new vis.DataSet([
-
-{ 'id': '001', 'size': 170, 'label': '*BeVaccination**\n(Profile)\nStatus: active\n', 'color': '#CFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '002', 'size': 170, 'label': '*VaccinationConfirmationStatus**\n(CodeSystem)\nStatus: draft\n', 'color': '#CFFFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '003', 'size': 170, 'label': '*VaccinationStatusReason**\n(ValueSet)\nStatus: draft\n', 'color': '#CFFFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '004', 'size': 170, 'label': '*VaccinationStatusReason**\n(CodeSystem)\nStatus: draft\n', 'color': '#CFFFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '005', 'size': 170, 'label': '*VaccineAdministrationRoute**\n(ValueSet)\nStatus: draft\n', 'color': '#CFFFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '006', 'size': 170, 'label': '*VaccineAdministrationRoute**\n(CodeSystem)\nStatus: draft\n', 'color': '#CFFFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '007', 'size': 170, 'label': '*AdministeredProduct**\n(Extension)\nStatus: active\n', 'color': '#FFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '008', 'size': 170, 'label': '*VaccinationOriginalOrder**\n(Extension)\nStatus: active\n', 'color': '#FFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '009', 'size': 170, 'label': '*VaccinationRecorder**\n(Extension)\nStatus: active\n', 'color': '#FFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '010', 'size': 170, 'label': '*VaccineConfirmationStatus**\n(Extension)\nStatus: active\n', 'color': '#FFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '011', 'size': 170, 'label': '*CNKCode**\n(NamingSystem)\nStatus: active\n', 'color': '#FFCFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '012', 'size': 170, 'label': '*NIHDIOrganization**\n(NamingSystem)\nStatus: active\n', 'color': '#FFCFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '013', 'size': 170, 'label': '*NIHDIProfessional**\n(NamingSystem)\nStatus: active\n', 'color': '#FFCFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '014', 'size': 170, 'label': '*ONEVaccinationID**\n(NamingSystem)\nStatus: active\n', 'color': '#FFCFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '015', 'size': 170, 'label': '*ProductManufacturer**\n(NamingSystem)\nStatus: active\n', 'color': '#FFCFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '016', 'size': 170, 'label': '*BeVaccinationLocation**\n(Extension)\nStatus: active\n', 'color': '#FFCFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '017', 'size': 170, 'label': '*CareLocation**\n(ValueSet)\nStatus: draft\n', 'color': '#CFFFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '018', 'size': 170, 'label': '*CareLocation**\n(CodeSystem)\nStatus: draft\n', 'color': '#CFFFFF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-{ 'id': '019', 'size': 170, 'label': '*VaccinationConfirmationStatus**\n(ValueSet)\nStatus: draft\n', 'color': '#CFFFCF', 'shape': 'box', 'font': { 'align': 'left', 'multi':'md' } },
-
-
-]);
-
-var edges = new vis.DataSet([
-
-{  from: '001',to: '008', relation:'extension', label: 'Extension',arrows: {'to':{ enabled: true,'type':'curve'} },color: { color: '#400000' }},
-{  from: '001',to: '007', relation:'extension', label: 'Extension',arrows: {'to':{ enabled: true,'type':'curve'} },color: { color: '#400000' }},
-{  from: '001',to: '010', relation:'extension', label: 'Extension',arrows: {'to':{ enabled: true,'type':'curve'} },color: { color: '#400000' }},
-{  from: '001',to: '009', relation:'extension', label: 'Extension',arrows: {'to':{ enabled: true,'type':'curve'} },color: { color: '#400000' }},
-{  from: '001',to: '003', relation:'binding_req', label: 'Bound (Req)',arrows: {'to':{ enabled: true,'type':'arrow'} },color: { color: '#000000' }},
-{  from: '003',to: '004', relation:'values_from', label: 'Values From',arrows: {'to':{ enabled: true,'type':'crow'} },color: { color: '#404000' }},
-{  from: '001',to: '005', relation:'binding_req', label: 'Bound (Req)',arrows: {'to':{ enabled: true,'type':'arrow'} },color: { color: '#000000' }},
-{  from: '005',to: '006', relation:'values_from', label: 'Values From',arrows: {'to':{ enabled: true,'type':'crow'} },color: { color: '#404000' }},
-{  from: '007',to: '011', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '007',to: '015', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '001',to: '012', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '001',to: '013', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '009',to: '012', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '009',to: '013', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '001',to: '014', relation:'system', label: 'System',arrows: {'to':{ enabled: true,'type':'diamond'} },color: { color: '#404040' }},
-{  from: '001',to: '016', relation:'extension', label: 'Extension',arrows: {'to':{ enabled: true,'type':'curve'} },color: { color: '#400000' }},
-{  from: '016',to: '017', relation:'binding_req', label: 'Bound (Req)',arrows: {'to':{ enabled: true,'type':'arrow'} },color: { color: '#000000' }},
-{  from: '017',to: '018', relation:'values_from', label: 'Values From',arrows: {'to':{ enabled: true,'type':'crow'} },color: { color: '#404000' }},
-{  from: '010',to: '019', relation:'binding_req', label: 'Bound (Req)',arrows: {'to':{ enabled: true,'type':'arrow'} },color: { color: '#000000' }},
-{  from: '019',to: '002', relation:'values_from', label: 'Values From',arrows: {'to':{ enabled: true,'type':'crow'} },color: { color: '#404000' }},
-
-]);*/
-
 
 /**
  * filter values are updated in the outer scope.
@@ -115,30 +62,15 @@ const nodesFilter = (node) => {
       return true;
   }
 };
-/*var json = $.getJSON("../data/datavis.json")
-  .done(function(data){
-    var nodes = {
-      nodes: data.nodes
-    };
-    var edges = {
-      edges: data.edges
-    };
-  });*/
-
 var _nodes = new vis.DataSet();
 var _edges = new vis.DataSet();
 
-//var container = document.getElementById('mynetwork');
+
 var data = {
   nodes: _nodes,
   edges: _edges,
 };
-/*var options = {
-  autoResize: true,
-  clickToUse: false
-};
-var network = new vis.Network(container, data, options);
-*/
+
 $.getJSON('../data/edges.json', function(edges) {
   _edges.add(edges);
 });
