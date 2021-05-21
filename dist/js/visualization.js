@@ -115,7 +115,7 @@ const nodesFilter = (node) => {
       return true;
   }
 };
-var json = $.getJSON("data/datavis.json")
+var json = $.getJSON("../data/datavis.json")
   .done(function(data){
     var data = {
       nodes: data.nodes,
