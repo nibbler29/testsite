@@ -10,7 +10,7 @@
   
   /* Header/logo Title */
   .header {
-    padding: 40px;
+    padding: 20px;
     text-align: center;
     background: #1abc9c;
     color: white;
@@ -72,18 +72,18 @@
   /* Create two unequal columns that sits next to each other */
   /* Sidebar/left column */
   .side {
-    -ms-flex: 15%; /* IE10 */
-    flex: 15%;
+    -ms-flex: 20%; /* IE10 */
+    flex: 20%;
     background-color: #f1f1f1;
-    padding: 10px;
+    padding: 15px;
   }
   
   /* Main column */
   .main {   
-    -ms-flex: 85%; /* IE10 */
-    flex: 85%;
+    -ms-flex: 80%; /* IE10 */
+    flex: 80%;
     background-color: white;
-    padding: 30px;
+    padding: 25px;
   }
   
   /* Fake image, just for this example */
