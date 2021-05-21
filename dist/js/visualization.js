@@ -139,10 +139,10 @@ var data = {
 };
 var network = new vis.Network(container, data, options);
 */
-$.getJSON('../data/datavis.json', function(edges) {
+$.getJSON('../data/edges.json', function(edges) {
   _edges.add(edges);
 });
-$.getJSON('../data/datavis.json', function(nodes) {
+$.getJSON('../data/nodes.json', function(nodes) {
  _nodes.add(nodes);
 });  
 
