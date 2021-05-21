@@ -131,7 +131,7 @@
       monospace;
   }
 
-  .select {
+  #select {
     width: 100%;
     min-width: 15ch;
     max-width: 30ch;
