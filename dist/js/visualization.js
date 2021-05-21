@@ -115,7 +115,7 @@ const nodesFilter = (node) => {
       return true;
   }
 };
-var json = $.getJSON("../data/datavis.json")
+/*var json = $.getJSON("../data/datavis.json")
   .done(function(data){
     var nodes = {
       nodes: data.nodes
@@ -123,14 +123,35 @@ var json = $.getJSON("../data/datavis.json")
     var edges = {
       edges: data.edges
     };
-  });
+  });*/
+
+var _nodes = new vis.DataSet();
+var _edges = new vis.DataSet();
+
+//var container = document.getElementById('mynetwork');
+var data = {
+  nodes: _nodes,
+  edges: _edges,
+};
+/*var options = {
+  autoResize: true,
+  clickToUse: false
+};
+var network = new vis.Network(container, data, options);
+*/
+$.getJSON('../data/datavis.json', function(edges) {
+  _edges.add(edges);
+});
+$.getJSON('../data/datavis.json', function(nodes) {
+ _nodes.add(nodes);
+});  
 
 const edgesFilter = (edge) => {
   return edgesFilterValues[edge.relation];
 };
 
-const nodesView = new vis.DataView(nodes, { filter: nodesFilter });
-const edgesView = new vis.DataView(edges, { filter: edgesFilter });
+const nodesView = new vis.DataView(_nodes, { filter: nodesFilter });
+const edgesView = new vis.DataView(_edges, { filter: edgesFilter });
 
 nodeFilterSelector.addEventListener("change", (e) => {
   // set new value to filter variable
