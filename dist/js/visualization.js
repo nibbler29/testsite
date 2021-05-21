@@ -125,25 +125,25 @@ const nodesFilter = (node) => {
     };
   });*/
 
-var nodes = new vis.DataSet();
-var edges = new vis.DataSet();
+var _nodes = new vis.DataSet();
+var _edges = new vis.DataSet();
 
 //var container = document.getElementById('mynetwork');
-/*var data = {
+var data = {
   nodes: _nodes,
   edges: _edges,
 };
-var options = {
+/*var options = {
   autoResize: true,
   clickToUse: false
 };
 var network = new vis.Network(container, data, options);
 */
 $.getJSON('../data/edges.json', function(edges) {
-  edges.add(edges);
+  _edges.add(edges);
 });
 $.getJSON('../data/nodes.json', function(nodes) {
- nodes.add(nodes);
+ _nodes.add(nodes);
 });  
 
 const edgesFilter = (edge) => {
@@ -170,8 +170,8 @@ edgeFilters.forEach((filter) =>
     edgesView.refresh();
   })
 );
-
 startNetwork({ nodes: nodesView, edges: edgesView });
+//startNetwork({ nodes: nodesView, edges: edgesView });
 //});
 
 var x, i, j, l, ll, selElmnt, a, b, c;
