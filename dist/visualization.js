@@ -1,4 +1,4 @@
-$(document).ready( function () {
+//$(document).ready( function () {
 const nodeFilterSelector = document.getElementById("nodeFilterSelect");
 const edgeFilters = document.getElementsByName("edgesFilter");
 
@@ -153,4 +153,4 @@ edgeFilters.forEach((filter) =>
 );
 
 startNetwork({ nodes: nodesView, edges: edgesView });
-});
+//});
