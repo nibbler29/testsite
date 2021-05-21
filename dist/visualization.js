@@ -72,18 +72,7 @@ var edges = new vis.DataSet([
 {  from: '019',to: '002', relation:'values_from', label: 'Values From',arrows: {'to':{ enabled: true,'type':'crow'} },color: { color: '#404000' }},
 
 ]);
-var edges = [
-  { 'from': "P1", 'to': "P2", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
-  { 'from': "P1", 'to': "P3", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
-  { 'from': "P1", 'to': "P4", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
-  { 'from': "P1", 'to': "6605", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
-  { 'from': "P1", 'to': "P8", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
 
-  { 'from': "P4", 'to': "P5", 'arrows': 'to', label: 'Available as', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
-  { 'from': "P4", 'to': "P6", 'arrows': 'to', label: 'Available as', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
-  { 'from': "P2", 'to': "P7", 'arrows': 'to', label: 'Available as', 'physics': true, 'smooth': { 'type': 'cubicBezier' } }
-
-];
 
 /**
  * filter values are updated in the outer scope.
