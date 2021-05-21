@@ -105,7 +105,19 @@
           new vis.Network(container, data, options);
         //  network.stabilize();
         }
-  
+        var edges = [
+  { 'from': "P1", 'to': "P2", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+  { 'from': "P1", 'to': "P3", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+  { 'from': "P1", 'to': "P4", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+  { 'from': "P1", 'to': "6605", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+  { 'from': "P1", 'to': "P8", 'arrows': 'to', label: 'Active ingredient of', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+
+  { 'from': "P4", 'to': "P5", 'arrows': 'to', label: 'Available as', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+  { 'from': "P4", 'to': "P6", 'arrows': 'to', label: 'Available as', 'physics': true, 'smooth': { 'type': 'cubicBezier' } },
+  { 'from': "P2", 'to': "P7", 'arrows': 'to', label: 'Available as', 'physics': true, 'smooth': { 'type': 'cubicBezier' } }
+
+];
+
         /**
          * In this example we do not mutate nodes or edges source data.
          */
